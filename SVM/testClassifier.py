@@ -37,6 +37,9 @@ for rect in rects:
     # rect[2]=width, rect[3]=height
     if rect[2] < 20 or rect[3] < 20 or rect[2] > rect[3]:
         continue
+    # additional boundaries
+    if rect[2]-5 > rect[3] or rect[2] > 150 or rect[3] > 120:
+        continue
     # Draw the rectangles    
     cv2.rectangle(im, (rect[0], rect[1]), (rect[0] + rect[2], rect[1] + rect[3]), (0, 255, 0), 3) 
     # Make the rectangular region around the digit
